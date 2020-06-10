@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="625.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisterController">
+   <children>
+      <Button layoutX="403.0" layoutY="399.0" mnemonicParsing="false" onAction="#signUp" prefHeight="56.0" prefWidth="94.0" text="Sign Up" />
+      <Label layoutX="62.0" layoutY="99.0" prefHeight="49.0" prefWidth="109.0" text="First Name" />
+      <Label layoutX="62.0" layoutY="148.0" prefHeight="49.0" prefWidth="109.0" text="Last Name" />
+      <TextField fx:id="firstNameBx" layoutX="216.0" layoutY="108.0" />
+      <TextField fx:id="lastNameBx" layoutX="216.0" layoutY="157.0" />
+      <Label layoutX="62.0" layoutY="197.0" prefHeight="49.0" prefWidth="109.0" text="User Name" />
+      <Label layoutX="62.0" layoutY="246.0" prefHeight="49.0" prefWidth="109.0" text="Password" />
+      <TextField fx:id="userNameBx" layoutX="216.0" layoutY="206.0" />
+      <PasswordField fx:id="passBx" layoutX="216.0" layoutY="255.0" />
+      <Label layoutX="62.0" layoutY="310.0" prefHeight="49.0" prefWidth="109.0" text="Credit Card" />
+      <TextField fx:id="creditBx" layoutX="216.0" layoutY="319.0" />
+      <Label layoutX="325.0" layoutY="14.0" prefHeight="83.0" prefWidth="157.0" text="Register">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

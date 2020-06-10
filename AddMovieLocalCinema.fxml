@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="558.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="66.0" layoutY="48.0" mnemonicParsing="false" text="Join Movies" />
+      <Button layoutX="66.0" layoutY="97.0" mnemonicParsing="false" text="Remove Movies" />
+      <Button layoutX="66.0" layoutY="153.0" mnemonicParsing="false" text="Build Screening" />
+      <VBox layoutX="211.0" layoutY="162.0" prefHeight="89.0" prefWidth="460.0">
+         <children>
+            <HBox prefHeight="37.0" prefWidth="375.0">
+               <children>
+                  <ComboBox prefHeight="31.0" prefWidth="98.0" promptText="Day" />
+                  <ComboBox prefHeight="31.0" prefWidth="98.0" promptText="Month" />
+                  <ComboBox prefHeight="31.0" prefWidth="98.0" promptText="Year" />
+                  <ComboBox prefWidth="150.0" promptText="Hours" />
+               </children>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="312.0">
+               <children>
+                  <ComboBox prefHeight="31.0" prefWidth="98.0" promptText="Movie" />
+                  <ComboBox prefHeight="31.0" prefWidth="127.0" promptText="Theater Id" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="567.0" layoutY="273.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="59.0" text="Build" />
+      <Button layoutX="67.0" layoutY="335.0" mnemonicParsing="false" text="Remove Screnning" />
+   </children>
+</AnchorPane>
