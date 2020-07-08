@@ -5,34 +5,50 @@ import java.io.Serializable;
 public class Theater implements Serializable
 
 {
-	private static int theaterId;
-	private int numOFrows=0;
-	private int numOFcols=0;
+	private int theaterId;
+	private int numOfRows=0;
+	private int numOfCols=0;
 	private static final long serialVersionUID = 1L;
 	
-	public Theater()
+	public Theater(int theaterId)
 	{
-		Theater.theaterId ++;
+		this.theaterId=theaterId;
 	}
 
-	public int getNumOFrows() {
-		return numOFrows;
-	}
-
-	public void setNumOFrows(int numOFrows) {
-		this.numOFrows = numOFrows;
-	}
-
-	public int getNumOFcols() {
-		return numOFcols;
-	}
-
-	public void setNumOFcols(int numOFcols) {
-		this.numOFcols = numOFcols;
-	}
-
-	public static int getTheaterId() {
+	public int getTheaterId() {
 		return theaterId;
 	}
+
+	public void setTheaterId(int theaterId) {
+		this.theaterId = theaterId;
+	}
+
+	public int getNumOfRows() {
+		return numOfRows;
+	}
+ 
+	public void setNumOfRows(int numOfRows) {
+		this.numOfRows = numOfRows;
+	}
+
+	public int getNumOfCols() 
+	{
+		return numOfCols;
+	}
+ 
+	public void setNumOfCols(int numOfCols) {
+		this.numOfCols = numOfCols;
+	}
 	
+
+	/*
+	@Override
+	public int compareTo(Theater compareTheater)
+	{
+        int compareId=((Theater)compareTheater).getTheaterId();
+        return this.theaterId-compareId;
+	}
+*/
+	
+
 }
