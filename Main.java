@@ -1,4 +1,8 @@
 package application;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -16,7 +20,7 @@ public class Main extends Application
 
 	@Override
 	public void start(Stage primarystage) throws Exception 
-	{
+	{    
 		primaStage = primarystage;
 		Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
 		Scene scene = new Scene(root);

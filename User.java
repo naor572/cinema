@@ -1,16 +1,20 @@
 package application;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 
 public class User implements Serializable 
 {
 
-	String firstName;
-	String lastName;
-	String userName;
-	String password;
-	String creditCard;
-	boolean isAdmin;
+	
+	private	String firstName;
+	private String lastName;
+	private String userName;
+	private String password;
+	private String creditCard;
+	private boolean isAdmin;
+	private ArrayList<Order>orederList =new  ArrayList<Order>();
+
 	private static final long serialVersionUID = 1L;
 
 	public User(String firstName, String lastName,String userName,String password, String creditCard, boolean isAdmin) {
@@ -23,6 +27,65 @@ public class User implements Serializable
 		this.isAdmin = isAdmin;
 	}
 
+
+	public User() {
+	}
+	public ArrayList<Order> getOrederList() 
+	{
+		return orederList;
+	}
+	public ArrayList<String> getOrederListString() 
+	{
+		ArrayList<String>orderStringList = new ArrayList<String>();
+		for(Order i : orederList)
+		{
+			orderStringList.add(i.toString());
+		}
+		return orderStringList;
+	}
+
+	public void deleteOrders() 
+	{
+		for(Cinema c :CinemaManager.getCinemaManager().getCinemaList())
+		{
+			for(Order o : orederList)
+			{
+				Screening s =c.getScreeningByString(o.getScreeningName());
+				if(s!=null)
+				{
+					for(Seat sc:o.getSeats())
+					{
+						sc.setAvailable(true);
+						for(Seat se:s.getSeatList())
+						{
+							if(se.getRow() == sc.getRow() && se.getCol()== sc.getCol())
+							{
+								se.setAvailable(true);
+							}
+						}
+					}
+					
+					s.setNumofAvailableSeats(s.getNumofAvailableSeats() +o.getNumOfTickets());
+					return;
+				}
+			}
+		}
+	}
+
+		/*
+		for(Order i : orederList)
+		{
+			for(Seat j:i.getSeats())
+			{
+				j.setAvailable(true);
+			}
+		}
+	}
+*/
+	public void addOrders(Order o)
+	{
+		orederList.add(o);
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -37,6 +100,7 @@ public class User implements Serializable
 		return password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -44,7 +108,7 @@ public class User implements Serializable
 	public String getCreditCard() {
 		return creditCard;
 	}
-
+ 
 	public void setCreditCard(String creditCard) {
 		this.creditCard = creditCard;
 	}
