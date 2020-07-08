@@ -10,6 +10,7 @@ public abstract class UserManagement
 {
 	private String filename = "user.txt"; 
 	protected  ArrayList<User> users =new ArrayList<>();	
+	public static User currentUser;
 	protected  UserManagement()
 	{
 
@@ -18,7 +19,7 @@ public abstract class UserManagement
 	{
 		users.add(u);
 		writeUsers();
-	}
+	} 
 
 	@SuppressWarnings("unchecked")
 	protected void readUsers()
@@ -39,9 +40,9 @@ public abstract class UserManagement
 		}	
 	}
 
+ 
 
-
-	public void writeUsers()
+	protected void writeUsers()
 	{	
 		ObjectOutputStream outputStream=null;
 		try	{
@@ -63,9 +64,9 @@ public abstract class UserManagement
 
 	}
 
+
 	/*
-	 * 
-	 * 	public void writeUser(User user)
+	public void writeUser(User user)
 	{	
 		users.add(user);
 		ObjectOutputStream outputStream=null;
@@ -87,7 +88,5 @@ public abstract class UserManagement
 		}
 
 	}
-	 * 
-	 */
-
+	*/
 }
