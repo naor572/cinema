@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 public class LoginController 
 {
 	@FXML
-	private TextField userName;
+	protected TextField userName;
 	@FXML
 	private PasswordField pass;
 	private LoginView loginView =LoginView.getLoginView();

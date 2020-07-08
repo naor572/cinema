@@ -1,68 +1,80 @@
-package cinema;
+package application;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
-public class movie implements Serializable
-
+public class Movie implements Serializable
 {
+	private String name;
+	private String category;
+	private String aboutMovie;
+	private String image=null;
+	private ArrayList<String> feedbackList  = new ArrayList<String>() ;
+	private static final long serialVersionUID=1L;
 
 
-private String name;
-private String catgory;
-private List <movieInfo> infoList;
-private static final long serialVersionUID=1L;
-
-
-public movie(String name, String catgory) 
-{
-	this.name = name;
-	this.catgory = catgory;
-}
-
-public String getName() 
-{
-	return this.name;
-}
-
-
-public List<movieInfo> getlInfo()
-{
-	return this.infoList;
-}
-
-
-public String getCatgory() 
-{
-	return this.catgory;
-}
-
-
-public void addMovieInfo(int theaterId, Date date, String catgory)
-{
-	this.infoList.add(new movieInfo(theaterId,date,catgory));
-}
-
-public void removeMovieInfo(int movieId)
-{
-	
-	this.infoList.remove(search(movieId));
-}
-
-
-public movieInfo search(int movieId)
-{
-	
-	for(int i=0;i<(infoList.size());i++)
+	public Movie(String name, String category,String aboutMovie,String image) 
 	{
-		if(infoList.get(i).getMovieId()==movieId)
-		{
-			return infoList.get(i);
-		}
+		this.name = name;
+		this.category = category;
+		this.aboutMovie=aboutMovie;
+		this.image=image;
 	}
-	System.out.println("ID NOT EXIST");
-	return null;
+	 
 	
-}
+	 
+	public String getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+
+	public ArrayList<String> getFeedbackList() 
+	{
+		return feedbackList;
+	}
+
+	public void addFeedBack(String feedBack)
+	{
+		feedbackList.add(feedBack);
+	}
+
+
+
+	public String getAboutMovie() 
+	{
+		return aboutMovie;
+	}
+
+	public void setAboutMovie(String aboutMovie) {
+		this.aboutMovie = aboutMovie;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setCatgory(String category) {
+		this.category = category;
+	}
+
+	public String getName() 
+	{
+		return this.name;
+	}
+
+
+	public String getCategory() 
+	{
+		return this.category;
+	}
+
+
 
 }

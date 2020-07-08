@@ -11,7 +11,9 @@ public class AdminController
 	private AdminView adminView = AdminView.getAdminView();
 	private Admin adminModel = Admin.getAdmin();
 	private AddCinemaView addCinemaView = AddCinemaView.getAddCinemaView();
-	
+	private AddMovieView addMovieView=AddMovieView.getAddMovieView();
+	private AddScreeningView addScreeningView = AddScreeningView.getAddScreeningView();
+	private CinemaManager cinemaManagerModel = CinemaManager.getCinemaManager();
 
 	@FXML
 	public void deleteUserPress(ActionEvent e)
@@ -19,7 +21,7 @@ public class AdminController
 		adminModel.deleteUser(adminView.deleteUserPress(adminModel.getUserNameList()));
 
 	}
-	
+
 	@FXML
 	public void addCinemaWindow(ActionEvent e) throws IOException
 	{
@@ -27,7 +29,32 @@ public class AdminController
 
 	}
 
+	@FXML
+	public void addMovieWindow(ActionEvent e) throws IOException
+	{
+		addMovieView.addMovieWindow();
 
+	}
 
+	@FXML
+	public void addScreeningWindow(ActionEvent e) throws IOException
+	{
+		String name = addScreeningView.chooseCinemaWindow(cinemaManagerModel.getCinemaNameList());
+		if(!name.equals(""))
+		{
+			Cinema i =cinemaManagerModel.getCinemaByName(name);
+			cinemaManagerModel.setCurrentCinema(i);
+			addScreeningView.addScreeningWindow();
+			//cinemaManagerModel.readMovieFile();
+			//cinemaManagerModel.readCinemaFile();
+		}
 
+	}
+	
+	@FXML
+	protected void addAdminTutorialWindow(ActionEvent e) throws IOException
+	{
+		UserTutorialConroller.isUser=false;
+		UserTutorialView.getUserTutorialView().addUserTutorialWindow();
+	}
 }

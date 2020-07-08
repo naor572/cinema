@@ -28,7 +28,7 @@ public class RegisterView extends Main
 		registerStage.setScene(scene);
 		registerStage.showAndWait();
 	}
-
+ 
 
 	protected void showMessage(String msg)
 	{
@@ -37,10 +37,5 @@ public class RegisterView extends Main
 		a.setHeaderText(msg);
 		a.show();
 	}
-
-
-
-
-
 
 }
