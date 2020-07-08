@@ -16,7 +16,7 @@ public class Register extends  UserManagement
 
 	protected boolean findUserName(String userName)
 	{
-
+ 
 		for(User i :users)
 		{
 			if (i.getUserName().equals(userName))
@@ -26,7 +26,7 @@ public class Register extends  UserManagement
 		}
 		return false;
 	}
-
+   
 	protected int signUp(String firstName,String lastName,String userName,String password,String creditCard)
 	{
 		readUsers();
@@ -43,8 +43,6 @@ public class Register extends  UserManagement
 		}
 		return 0;
 	}
-
-
 
 }
 
